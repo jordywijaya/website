@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>MENU</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="static/font-awesome.min.css">
+      <link rel="stylesheet" href="css1/style.css">
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css" >
+    
+    <link href="static/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="js-sticky">
+      <div class="fh5co-main-nav">
+        <div class="container-fluid">
+          <div class="fh5co-menu-1">
+            <a href="/home" data-nav-section="home">Home</a>
+           
+          </div>
+          <div class="fh5co-logo">
+            <a href="index.html">Foodie Mart</a>
+          </div>
+          <div class="fh5co-menu-2">
+            <a href="/campgrounds" data-nav-section="menu">Menu</a>
+          
+             <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+                    <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">LOGIN</a></li>
+                    <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">SIGN UP</a></li>
+                <% } else { %>
+                    <li><a href="#">HELLO <%= currentUser.username %></a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                <% } %>
+
+      </ul>
+          </div>
+     
+        
+    </div>
+       </div>
+       </div>
+  </div>
+   </div>
+</section>
+
+  
+ 
+  <div class="container">
+     <% if(error && error.length > 0) { %>
+       <div class="alert alert-danger"><p><%=error %></p></div>
+     <% } %>
+     
+     <% if(success && success.length > 0) { %>
+       <div class="alert alert-success"><p><%= success %></p></div>
+     <% } %>
+  </div>
+ <!--  <div class="container"> -->
+
+

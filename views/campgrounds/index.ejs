@@ -1,0 +1,48 @@
+<% include ../partials/header %> 
+
+
+<br>
+<div class="container-index">
+ <div class="text-center">
+  <h3 class="tittle">FOODS </h3>
+</div>
+
+
+          <div class="container">
+           <p class="text-left">
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Food!</a>
+          </p>
+        </div>
+
+      
+
+            </div>
+          </header>
+
+  
+      <div class="container">
+        <ul id="myTab" class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">FOODS</a></li>
+
+
+        </ul>
+        <div class="row text-center flex-wrap" id="campground-grid">
+          <% campgrounds.forEach(function(campground){ %>
+          <div class="tab_grid">
+            <div class="col-sm-3 loc_1">
+
+
+              <a href="/campgrounds/<%= campground._id %>"><img src="<%= campground.image %>" alt="" style="width: 100%;margin-right:100%;"></a>
+            </div>
+
+            <div class="col-md-9 location_box1">
+              <h4 class="col-xs-12" align="left"><a href="/campgrounds/<%= campground._id %>"><%= campground.name %> </a></h4>
+              <p align="left" class="col-sm-12">Description : <%= campground.description %></p>
+
+              </div>
+            </div>
+            <% }); %>
+          </div>
+        </div>
+
+        <% include ../partials/footer %>
